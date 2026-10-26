@@ -53,13 +53,13 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update(TABLE, cv, COL_ID + "=?", new String[]{studentId}) > 0;
     }
 
-    // DELETE
+    // for delete
     public boolean deleteStudent(String studentId) {
         SQLiteDatabase db = getWritableDatabase();
         return db.delete(TABLE, COL_ID + "=?", new String[]{studentId}) > 0;
     }
 
-    // VIEW
+    // for view
     public Cursor getAllStudents() {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + TABLE + " ORDER BY " + COL_NAME, null);

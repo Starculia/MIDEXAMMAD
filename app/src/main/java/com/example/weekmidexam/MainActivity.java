@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DBHelper db;
 
-    private final ArrayList<String[]> students = new ArrayList<>(); // {id, name, enrolled("1"/"0")}
+    private final ArrayList<String[]> students = new ArrayList<>();
     private final ArrayList<String> displayList = new ArrayList<>();
     private ArrayAdapter<String> listAdapter;
 
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, displayList);
         lvStudents.setAdapter(listAdapter);
 
-        // Tap a row to load it into the form (for edit / delete)
         lvStudents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

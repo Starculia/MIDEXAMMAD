@@ -14,7 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TABLE = "students";
     public static final String COL_ID = "student_id";
     public static final String COL_NAME = "name";
-    public static final String COL_ENROLLED = "enrolled"; // 1 = enrolled, 0 = not enrolled
+    public static final String COL_ENROLLED = "enrolled";
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -41,7 +41,7 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(COL_ID, studentId);
         cv.put(COL_NAME, name);
         cv.put(COL_ENROLLED, enrolled ? 1 : 0);
-        return db.insert(TABLE, null, cv) != -1; // -1 = failed (e.g. duplicate ID)
+        return db.insert(TABLE, null, cv) != -1;
     }
 
     // for edit
